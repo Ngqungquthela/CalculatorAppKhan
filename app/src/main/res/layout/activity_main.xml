@@ -52,6 +52,7 @@
         android:layout_marginBottom="@dimen/between"
         android:text="Clear"
         android:textSize="40sp"
+        android:onClick="clear"
         app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -69,37 +70,40 @@
 
     <Button
         android:id="@+id/button9"
-        style="@style/Widget.AppCompat.Button"
+        style="@style/numsBackground"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="@dimen/between"
         android:layout_marginBottom="@dimen/between"
         android:text="9"
         android:textSize="40sp"
+        android:onClick="numClick"
         app:layout_constraintBottom_toTopOf="@+id/button6"
         app:layout_constraintStart_toEndOf="@+id/button8" />
 
     <Button
         android:id="@+id/button8"
-        style="@style/Widget.AppCompat.Button"
+        style="@style/numsBackground"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="@dimen/between"
         android:layout_marginBottom="@dimen/between"
         android:text="8"
         android:textSize="40sp"
+        android:onClick="numClick"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintStart_toEndOf="@+id/button7" />
 
     <Button
         android:id="@+id/button7"
-        style="@style/Widget.AppCompat.Button"
+        style="@style/numsBackground"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
         android:layout_marginBottom="@dimen/between"
         android:text="7"
         android:textSize="40sp"
+        android:onClick="numClick"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -110,6 +114,7 @@
         android:layout_height="80dp"
         android:layout_marginLeft="@dimen/between"
         android:layout_marginBottom="@dimen/between"
+        android:backgroundTint="#D42525"
         android:text="-"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonPlus"
@@ -117,31 +122,33 @@
 
     <Button
         android:id="@+id/button6"
-        style="@style/Widget.AppCompat.Button"
+        style="@style/numsBackground"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="@dimen/between"
         android:layout_marginBottom="@dimen/between"
         android:text="6"
         android:textSize="40sp"
+        android:onClick="numClick"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintStart_toEndOf="@+id/button5" />
 
     <Button
         android:id="@+id/button5"
-        style="@style/Widget.AppCompat.Button"
+        style="@style/numsBackground"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="@dimen/between"
         android:layout_marginBottom="@dimen/between"
         android:text="5"
         android:textSize="40sp"
+        android:onClick="numClick"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toEndOf="@+id/button4" />
 
     <Button
         android:id="@+id/button4"
-        style="@style/Widget.AppCompat.Button"
+        style="@style/numsBackground"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
@@ -165,7 +172,7 @@
 
     <Button
         android:id="@+id/button3"
-        style="@style/Widget.AppCompat.Button"
+        style="@style/numsBackground"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="@dimen/between"
@@ -177,7 +184,7 @@
 
     <Button
         android:id="@+id/button2"
-        style="@style/Widget.AppCompat.Button"
+        style="@style/numsBackground"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="@dimen/between"
@@ -189,7 +196,7 @@
 
     <Button
         android:id="@+id/button1"
-        style="@style/Widget.AppCompat.Button"
+        style="@style/numsBackground"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
@@ -213,7 +220,7 @@
 
     <Button
         android:id="@+id/button."
-        style="@style/Widget.AppCompat.Button"
+        style="@style/numsBackground"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
@@ -225,7 +232,7 @@
 
     <Button
         android:id="@+id/button0"
-        style="@style/Widget.AppCompat.Button"
+        style="@style/numsBackground"
         android:layout_width="175dp"
         android:layout_height="80dp"
         android:layout_gravity="center"

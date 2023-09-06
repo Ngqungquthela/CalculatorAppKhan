@@ -32,4 +32,7 @@
     </style>
 
     <style name="Theme.CalculatorAppKhan" parent="Base.Theme.CalculatorAppKhan" />
+    <style name="numsBackground" parent="Widget.AppCompat.Button">
+        <item name="backgroundTint">@color/md_theme_light_outline</item>
+    </style>
 </resources>
