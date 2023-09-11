@@ -10,23 +10,22 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    String eqnText;
-    String first;
-    String operation;
-    String second;
+    String eqnText, first, operation, second;
     TextView tvNumbers;
-    boolean doneOperation;
+    boolean doneOperation, resultReset;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        eqnText = "";
-        first = "";
+        eqnText = "0";
+        first = "0";
         operation = "";
         second = "";
         tvNumbers = findViewById(R.id.textViewNumbers);
         doneOperation = false;
+        resultReset = true;
     }
 
     public void numClick(View v){
@@ -36,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         String buttonText = b.getText().toString();
 
         if(buttonText.equals("CLEAR")){
-            eqnText = "";
-            first = "";
+            eqnText = "0";
+            first = "0";
             second = "";
             operation = "";
             doneOperation = false;
@@ -54,12 +53,23 @@ public class MainActivity extends AppCompatActivity {
             Log.i("khan", eqnText);
         }
         else if(!doneOperation){
+            if(resultReset){
+                first = "";
+                eqnText = "";
+                resultReset = false;
+            }
+            if(first.contains(".") && buttonText.equals(".")){
+                buttonText = "";
+            }
             first += buttonText;
             eqnText += buttonText;
             tvNumbers.setText(eqnText);
             Log.i("khan", eqnText);
         }
         else{
+            if(second.contains(".") && buttonText.equals(".")){
+                buttonText = "";
+            }
             second += buttonText;
             eqnText += buttonText;
             tvNumbers.setText(eqnText);
@@ -70,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
     public void equation(String one, String op, String two){
         Double part1 = Double.parseDouble(one);
         Double part2 = Double.parseDouble(two);
-        Double result;
+        double result;
+        String resultText;
 
         if(op.equals("/")){
             result = (part1 / part2);
@@ -87,12 +98,21 @@ public class MainActivity extends AppCompatActivity {
         else{
             result = (part1 % part2);
         }
+
         result = Math.floor(result * 1000) / 1000;
-        tvNumbers.setText(result.toString());
-        eqnText = "";
-        first = "";
+        if(result % 1 == 0){
+            resultText = (int)result + "";
+        }
+        else{
+            resultText = result + "";
+        }
+
+        tvNumbers.setText(resultText);
+        eqnText = resultText;
+        first = resultText;
         second = "";
         operation = "";
         doneOperation = false;
+        resultReset = true;
     }
 }
